@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Automation Audit | AutomaAI</title>
+  <meta name="description" content="Get a free, tailored estimate of your business automation opportunities." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AutomaAI home"><span class="logo-mark" aria-hidden="true">◆</span><span class="logo-text">Automa<span class="accent">AI</span></span></a>
+      <nav class="main-nav" id="main-nav" aria-label="Primary navigation"><ul class="nav-list"><li><a href="services.html">Services</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <div class="header-actions"><a href="contact.html" class="btn btn-ghost btn-sm">Book a Consultation</a><button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu"><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span></button></div>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="page-hero"><div class="container reveal"><p class="eyebrow">Free Automation Audit</p><h1>Find the work your business should stop doing manually.</h1><p class="hero-subtitle">Tell us how your business operates. In a few minutes, receive a tailored overview of your biggest automation opportunities.</p></div></section>
+    <section class="audit-section"><div class="container audit-layout">
+      <form id="audit-form" class="form-card audit-form reveal" novalidate>
+        <div><h2>Tell us about your business</h2><p class="form-hint">Fields marked with * are required. Your estimates are for planning only.</p></div>
+        <div class="form-row"><div class="form-field"><label for="businessType">Business type *</label><select id="businessType" name="businessType" required><option value="">Select an option</option><option value="Restaurant">Restaurant</option><option value="Cleaning company">Cleaning company</option><option value="Real estate">Real estate</option><option value="Beauty salon">Beauty salon</option><option value="Healthcare">Healthcare</option><option value="E-commerce">E-commerce</option><option value="Construction">Construction</option><option value="Agency">Agency</option><option value="Other">Other</option></select><span class="form-error" id="error-businessType"></span></div><div class="form-field"><label for="employees">Employees *</label><input id="employees" name="employees" type="number" min="1" max="10000" required placeholder="e.g. 8" /><span class="form-error" id="error-employees"></span></div></div>
+        <div class="form-row"><div class="form-field"><label for="leadsPerMonth">New leads per month *</label><input id="leadsPerMonth" name="leadsPerMonth" type="number" min="0" required placeholder="e.g. 120" /></div><div class="form-field"><label for="messagesPerDay">Customer messages per day *</label><input id="messagesPerDay" name="messagesPerDay" type="number" min="0" required placeholder="e.g. 40" /></div></div>
+        <div class="form-row"><div class="form-field"><label for="repetitiveHours">Hours per week spent on repetitive work *</label><input id="repetitiveHours" name="repetitiveHours" type="number" min="0" step="0.5" required placeholder="e.g. 25" /></div><div class="form-field"><label for="crm">Current CRM</label><input id="crm" name="crm" type="text" placeholder="e.g. HubSpot, Google Sheets" /></div></div>
+        <div class="form-field"><label for="tools">Current tools</label><input id="tools" name="tools" type="text" placeholder="e.g. Gmail, Google Calendar, Telegram" /><span class="form-hint">Separate tools with commas.</span></div>
+        <div class="form-field"><label for="biggestProblem">Your biggest operational problem *</label><textarea id="biggestProblem" name="biggestProblem" rows="4" required placeholder="For example: Leads wait too long for a reply, and our team manually copies data into a spreadsheet."></textarea><span class="form-error" id="error-biggestProblem"></span></div>
+        <div class="form-row"><div class="form-field"><label for="email">Work email *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" /><span class="form-error" id="error-email"></span></div><div class="form-field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div></div>
+        <button id="audit-submit" class="btn btn-primary btn-lg" type="submit"><span id="audit-submit-label">Analyze My Business</span></button>
+        <p id="audit-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <aside class="audit-aside reveal"><div class="card"><p class="eyebrow">What you receive</p><ul class="detail-list"><li>An automation readiness score</li><li>Prioritized workflow opportunities</li><li>Estimated time savings</li><li>A recommended implementation stack</li></ul></div><div class="card calculator"><p class="eyebrow">Savings calculator</p><h3>Potential yearly saving</h3><output id="calculator-result">€0</output><p id="calculator-caption">Enter your team size, hourly cost and repetitive hours to calculate an estimate.</p><div class="form-field"><label for="hourlyCost">Average hourly cost (€)</label><input id="hourlyCost" type="number" min="0" value="20" /></div><p class="form-hint">Estimate only — actual results depend on your processes and implementation.</p></div></aside>
+    </div></section>
+    <section id="audit-loading" class="audit-state" hidden aria-live="polite"><div class="container"><div class="card loading-card"><div class="spinner" aria-hidden="true"></div><h2>Analyzing your business...</h2><div class="checklist"><p class="checklist-item active" data-stage="0"><span class="status-icon">●</span>Understanding your workflow</p><p class="checklist-item pending" data-stage="1"><span class="status-icon">○</span>Identifying repetitive tasks</p><p class="checklist-item pending" data-stage="2"><span class="status-icon">○</span>Calculating automation opportunities</p><p class="checklist-item pending" data-stage="3"><span class="status-icon">○</span>Preparing recommendations</p></div></div></div></section>
+    <section id="audit-result" class="audit-state" hidden tabindex="-1"><div class="container"><div class="section-header"><p class="eyebrow">Your preliminary audit</p><h2>Your automation opportunities</h2></div><div class="audit-result-summary card"><div class="score-ring-wrap"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="scoreGradient"><stop stop-color="#6ee7ff"/><stop offset="1" stop-color="#8b7cf6"/></linearGradient></defs><circle class="score-ring-bg" cx="60" cy="60" r="52"/><circle id="score-ring" class="score-ring-fg" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="326.7"/></svg><strong id="score-value" class="score-ring-value">0</strong></div><div><h3 id="audit-summary">Your business has meaningful automation potential.</h3><p id="audit-next-step"></p></div></div><div id="opportunities" class="opportunities-grid"></div><div class="card stack-card"><h3>Recommended stack</h3><div id="recommended-stack" class="stack-list"></div><p class="form-hint">This is a preliminary estimate, not a guarantee of time or financial savings.</p></div><div class="hero-cta-group hero-cta-group--center"><a class="btn btn-primary btn-lg" href="contact.html">Book a Free Consultation</a><button id="restart-audit" class="btn btn-ghost btn-lg" type="button">Start a New Audit</button></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom"><p>© <span id="footer-year"></span> AutomaAI. All rights reserved.</p></div></footer>
+  <script type="module" src="js/navigation.js"></script><script type="module" src="js/ui.js"></script><script type="module" src="js/main.js"></script><script type="module" src="js/audit.js"></script>
+</body>
+</html>

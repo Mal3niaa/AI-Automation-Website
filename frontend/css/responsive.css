@@ -1,0 +1,120 @@
+/* =========================================================
+   RESPONSIVE.CSS — Breakpoints: 1440 / 1024 / 768 / 375
+   ========================================================= */
+
+/* ---- 1440px and below: tighten container ---- */
+@media (max-width: 1440px) {
+  :root {
+    --container-max: 1100px;
+  }
+}
+
+/* ---- 1024px: tablet landscape ---- */
+@media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .service-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .savings-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-cta-group,
+  .footer-nav {
+    justify-content: center;
+  }
+}
+
+/* ---- 768px: tablet portrait / mobile nav ---- */
+@media (max-width: 768px) {
+  .main-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-bg);
+    transform: translateX(100%);
+    transition: transform var(--transition-slow);
+    padding: var(--space-6);
+    z-index: 400;
+  }
+
+  .main-nav.is-open {
+    transform: translateX(0);
+  }
+
+  .main-nav .nav-list {
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .main-nav a {
+    font-size: 1.1rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .header-actions .btn-sm {
+    display: none;
+  }
+
+  .service-cards-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+
+  section {
+    padding: var(--space-8) 0;
+  }
+}
+
+/* ---- 375px: small mobile ---- */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .hero-cta-group,
+  .hero-cta-group--center {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-lg {
+    width: 100%;
+    text-align: center;
+  }
+
+  .flow-branches {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .savings-figure {
+    font-size: 2.25rem;
+  }
+}

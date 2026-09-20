@@ -1,0 +1,341 @@
+/* =========================================================
+   FORMS.CSS — Contact form, audit form, calculator inputs
+   ========================================================= */
+
+.form-card {
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-2) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.form-field label span[aria-hidden="true"] {
+  color: var(--color-danger);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(110, 231, 255, 0.15);
+  outline: none;
+}
+
+.form-field input:invalid[aria-invalid="true"],
+.form-field.has-error input,
+.form-field.has-error select,
+.form-field.has-error textarea {
+  border-color: var(--color-danger);
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: var(--color-danger);
+  min-height: 1em;
+}
+
+.form-status {
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+.form-status.success {
+  color: var(--color-success);
+}
+
+.form-status.error {
+  color: var(--color-danger);
+}
+
+.form-hint {
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+}
+
+/* -------- Contact page layout -------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* -------- Page hero (shared across inner pages) -------- */
+.page-hero {
+  padding: var(--space-8) 0 var(--space-6);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(139, 124, 246, 0.08), transparent 100%);
+}
+
+.page-hero h1 {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.page-hero .hero-subtitle {
+  max-width: 620px;
+  margin: var(--space-4) auto 0;
+}
+
+/* -------- Mini flow diagrams (services/case studies) -------- */
+.mini-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mini-flow--compact {
+  gap: var(--space-1);
+}
+
+.mini-flow-step {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mini-flow-step--core {
+  background: var(--color-accent-gradient);
+  color: #06121a;
+}
+
+.mini-flow-arrow {
+  color: var(--color-text-faint);
+  font-size: 0.8rem;
+}
+
+.detail-list li {
+  position: relative;
+  padding: var(--space-2) 0 var(--space-2) var(--space-5);
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.detail-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-success);
+}
+
+/* -------- Services detail rows -------- */
+.service-detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+  padding: var(--space-7) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service-detail-row--reverse {
+  direction: rtl;
+}
+
+.service-detail-row--reverse > * {
+  direction: ltr;
+}
+
+.service-detail-copy h2 {
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.service-detail-visual {
+  display: flex;
+  justify-content: center;
+}
+
+/* -------- Industry grid -------- */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.industry-card h3 {
+  margin-bottom: var(--space-2);
+}
+
+.industry-card p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  margin-bottom: var(--space-4);
+}
+
+.industry-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-3);
+  width: 100%;
+}
+
+/* -------- Case studies -------- */
+.case-study-card {
+  margin-bottom: var(--space-6);
+}
+
+.case-study-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  border: 1px solid rgba(110, 231, 255, 0.3);
+  background: rgba(110, 231, 255, 0.08);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-3);
+}
+
+.case-study-before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin: var(--space-5) 0;
+}
+
+.case-study-col h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-3);
+}
+
+.case-study-result {
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+.case-study-disclaimer {
+  font-size: 0.82rem;
+  color: var(--color-text-faint);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
+  margin-top: var(--space-5);
+}
+
+/* -------- Pricing -------- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+}
+
+.pricing-card--featured {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent-gradient);
+  color: #06121a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-pill);
+}
+
+.pricing-tagline {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.pricing-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.pricing-card .btn {
+  margin-top: auto;
+}
+
+.pricing-disclaimer {
+  text-align: center;
+  color: var(--color-text-faint);
+  font-size: 0.85rem;
+  margin-top: var(--space-6);
+}
+
+/* -------- Automation audit -------- */
+.audit-layout { display:grid; grid-template-columns:minmax(0, 1.45fr) minmax(280px, .75fr); gap:var(--space-6); align-items:start; }
+.audit-form h2 { margin-bottom:var(--space-2); }
+.audit-aside { display:grid; gap:var(--space-5); position:sticky; top:calc(var(--header-height) + var(--space-5)); }
+.calculator output { display:block; font-size:clamp(2.3rem, 6vw, 3.5rem); font-weight:700; line-height:1.1; color:var(--color-success); margin:var(--space-3) 0; }
+.calculator p { color:var(--color-text-muted); font-size:.9rem; margin-bottom:var(--space-5); }
+.audit-state { padding:var(--space-8) 0; }
+.loading-card { max-width:600px; margin:auto; text-align:center; }
+.loading-card .spinner { width:32px; height:32px; margin:0 auto var(--space-5); }
+.loading-card h2 { margin-bottom:var(--space-5); }
+.checklist { text-align:left; max-width:360px; margin:auto; }
+.audit-result-summary { display:grid; grid-template-columns:160px 1fr; gap:var(--space-6); align-items:center; max-width:780px; margin:0 auto var(--space-7); }
+.audit-result-summary p { color:var(--color-text-muted); margin-top:var(--space-3); }
+.opportunities-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:var(--space-5); margin-bottom:var(--space-6); }
+.opportunity-card { display:flex; flex-direction:column; gap:var(--space-3); }
+.opportunity-meta { display:flex; gap:var(--space-2); flex-wrap:wrap; }
+.opportunity-card p { color:var(--color-text-muted); font-size:.92rem; }
+.opportunity-hours { color:var(--color-success); font-weight:700; margin-top:auto; }
+.stack-card { max-width:780px; margin:0 auto var(--space-7); text-align:center; }
+.stack-list { display:flex; justify-content:center; flex-wrap:wrap; gap:var(--space-3); margin:var(--space-5) 0; }
+.stack-list span { padding:var(--space-2) var(--space-4); border-radius:var(--radius-pill); background:rgba(110,231,255,.08); border:1px solid rgba(110,231,255,.25); color:var(--color-accent); font-size:.88rem; }
+@media (max-width: 1024px) { .audit-layout { grid-template-columns:1fr; } .audit-aside { position:static; grid-template-columns:1fr 1fr; } .opportunities-grid { grid-template-columns:1fr; } }
+@media (max-width: 768px) { .audit-aside { grid-template-columns:1fr; } .audit-result-summary { grid-template-columns:1fr; text-align:center; justify-items:center; } }
