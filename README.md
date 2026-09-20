@@ -644,4 +644,4 @@ The project is being developed as a portfolio project and as a foundation for an
 Web Developer & AI Automation Developer
 
 GitHub:
-https://github.com/seregabarcan-afk
+https://github.com/Mal3niaa
